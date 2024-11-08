@@ -74,3 +74,75 @@ class ItemHomepage {
 3. Warna latar belakang setiap item diubah dari `color:` menggunakan `item.backgroundColor`. Lalu menambah parameter backgroundColor pada ItemHomepage, dan menambahkan warna latar belakang pada setiap item.
 
 4. Memunculkan SnackBar ketika item ditekan. Menambahkan `onPressed` pada `ElevatedButton` untuk menampilkan SnackBar ketika tombol ditekan.
+
+## Tugas 8
+#### Apa kegunaan `const` di Flutter? Jelaskan apa keuntungan ketika menggunakan `const` pada kode Flutter. Kapan sebaiknya kita menggunakan `const`, dan kapan sebaiknya tidak digunakan?
+Kegunaan const di Flutter: const digunakan untuk mendeklarasikan variabel konstan di Dart. Dalam Flutter, const digunakan untuk membuat widget yang tidak berubah dan tidak memerlukan pembaruan status. Widget yang dideklarasikan dengan const akan dianggap sebagai widget yang sama jika dibangun ulang, sehingga Flutter tidak akan merender ulang widget tersebut. Ini dapat meningkatkan kinerja aplikasi dengan mengurangi waktu yang diperlukan untuk merender ulang widget yang tidak berubah. 
+
+#### Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
+Column dan Row adalah dua widget yang digunakan untuk menyusun widget anak secara vertikal (Column) atau horizontal (Row). Perbedaan utama antara keduanya adalah arah susunan widget anaknya.
+
+Column:
+- Column digunakan untuk menyusun widget anak secara vertikal, dari atas ke bawah.
+- Widget anak disusun berdasarkan urutan penambahan, sehingga widget pertama ditempatkan di bagian atas dan widget terakhir ditempatkan di bagian bawah.
+- Jika widget anak melebihi ukuran layar, maka widget anak akan diatur dalam ScrollView agar dapat di-scroll.
+- Contoh penggunaan Column: menyusun widget anak dalam bentuk daftar vertikal, seperti daftar item pada aplikasi berita atau daftar kontak.
+
+```dart
+Column(
+  children: <Widget>[
+    Text('Item 1'),
+    Text('Item 2'),
+    Text('Item 3'),
+  ],
+)
+```
+
+Row:
+- Row digunakan untuk menyusun widget anak secara horizontal, dari kiri ke kanan.
+- Widget anak disusun berdasarkan urutan penambahan, sehingga widget pertama ditempatkan di sebelah kiri dan widget terakhir ditempatkan di sebelah kanan.
+- Jika widget anak melebihi lebar layar, maka widget anak akan diatur dalam ScrollView agar dapat di-scroll.
+- Contoh penggunaan Row: menyusun widget anak dalam bentuk baris horizontal, seperti menu navigasi atau tombol aksi.
+
+```dart
+Row(
+  children: <Widget>[
+    Text('Item 1'),
+    Text('Item 2'),
+    Text('Item 3'),
+  ],
+)
+```
+
+####  Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
+Elemen input yang digunakan pada halaman form adalah:
+1. TextFormField: digunakan untuk membuat input teks yang dapat menerima masukan dari pengguna.
+2. ElevatedButton: digunakan untuk membuat tombol yang dapat ditekan oleh pengguna.
+3. Form: digunakan untuk mengelompokkan elemen-elemen input dalam satu kesatuan form.
+4. SingleChildScrollView: digunakan untuk membuat tata letak yang dapat di-scroll jika elemen-elemen input melebihi ukuran layar.
+5. AlertDialog: digunakan untuk menampilkan dialog konfirmasi setelah pengguna mengirimkan form.
+
+#### Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+Caranya adalah dengan mengatur dan membuat aplikasi menggunakan ThemeData di MaterialApp. ThemeData berisi konfigurasi warna, tipografi, dan gaya yang digunakan dalam aplikasi. Dengan menggunakan ThemeData, kita dapat membuat aplikasi yang konsisten dengan mengatur tema secara global.
+
+```dart
+MaterialApp(
+  title: 'Zero PBP Mobile',
+  theme: ThemeData(
+    colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan),
+    useMaterial3: true,
+    fontFamily: 'Roboto',
+  ),
+  home: MyHomePage(),
+);
+```
+
+#### Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
+Navigasi dalam aplikasi dengan banyak halaman pada Flutter dapat ditangani dengan menggunakan Navigator dan Route. Navigator digunakan untuk mengelola tumpukan halaman (routes) dalam aplikasi, sedangkan Route digunakan untuk menentukan halaman yang akan ditampilkan. Contoh penggunaan Navigator untuk berpindah halaman:
+
+```dart
+Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => SecondPage()),
+);
+```

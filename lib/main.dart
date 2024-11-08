@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zero_pbp_mobile/menu.dart';
+import 'package:zero_pbp_mobile/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan),
         useMaterial3: true,
+        fontFamily: 'Roboto',
       ),
       home: MyHomePage(),
     );
