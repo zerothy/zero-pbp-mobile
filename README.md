@@ -146,3 +146,50 @@ Navigator.push(
   MaterialPageRoute(builder: (context) => SecondPage()),
 );
 ```
+
+## Tugas 9
+#### Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?
+Model digunakan untuk merepresentasikan data yang diambil atau dikirim dalam format JSON. Dengan membuat model, kita dapat mengonversi data JSON menjadi objek Dart yang dapat diakses dan dimanipulasi dengan mudah. Model juga memungkinkan kita untuk memvalidasi data yang diterima dan memastikan bahwa data tersebut sesuai dengan struktur yang diharapkan.
+
+#### Jelaskan fungsi dari library http yang sudah kamu implementasikan pada tugas ini
+Library http digunakan untuk melakukan permintaan HTTP ke server dan menerima responsenya. Dengan library http, kita dapat mengirim permintaan GET, POST, PUT, DELETE, dan lainnya ke server, serta mengelola responsenya. Library http menyediakan kelas Client untuk membuat klien HTTP yang dapat digunakan untuk mengirim permintaan ke server.
+
+#### Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
+CookieRequest adalah kelas yang digunakan untuk menyimpan cookie yang diterima dari server. CookieRequest perlu dibagikan ke semua komponen di aplikasi Flutter agar cookie yang diterima dari server dapat diakses dan digunakan oleh semua komponen. Dengan menggunakan CookieRequest, kita dapat menyimpan cookie yang diterima dari server dan mengirimnya kembali ke server saat melakukan permintaan berikutnya. Hal ini memungkinkan kita untuk menjaga sesi pengguna dan otentikasi antara permintaan yang berbeda.
+
+#### Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter.
+Mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter adalah sebagai berikut:
+1. Pengguna memasukkan data melalui elemen input, seperti TextFormField atau ElevatedButton.
+2. Data yang dimasukkan oleh pengguna disimpan dalam variabel atau objek yang sesuai.
+3. Data yang disimpan kemudian dikirim ke server menggunakan permintaan HTTP, seperti POST atau PUT.
+4. Server menerima data yang dikirim dan memprosesnya sesuai dengan permintaan yang diterima.
+5. Server mengirim respons ke aplikasi Flutter dengan data yang diperbarui.
+6. Aplikasi Flutter menerima respons
+7. Data yang diterima dari server kemudian ditampilkan pada aplikasi Flutter, seperti menampilkan data pada ListView atau menampilkan pesan sukses pada AlertDialog.
+
+#### Jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+Mekanisme autentikasi dari login, register, hingga logout adalah sebagai berikut:
+1. Pengguna memasukkan data akun, seperti email dan kata sandi, pada aplikasi Flutter.
+2. Data akun yang dimasukkan oleh pengguna dikirim ke server menggunakan permintaan HTTP, seperti POST.
+3. Server menerima data akun yang dikirim dan memprosesnya sesuai dengan permintaan yang diterima.
+4. Server melakukan autentikasi data akun yang diterima, seperti memeriksa kecocokan email dan kata sandi.
+5. Jika autentikasi berhasil, server mengirim respons ke aplikasi Flutter dengan data pengguna yang berhasil diotentikasi.
+6. Aplikasi Flutter menerima respons dan menampilkan menu atau halaman beranda yang sesuai dengan pengguna yang berhasil diotentikasi.
+7. Pengguna dapat menggunakan menu atau halaman beranda yang ditampilkan.
+8. Jika pengguna ingin keluar atau logout
+9. Pengguna memilih menu logout pada aplikasi Flutter.
+10. Aplikasi Flutter mengirim permintaan logout ke server menggunakan permintaan HTTP, seperti POST atau PUT.
+11. Server menerima permintaan logout dan memprosesnya sesuai dengan permintaan yang diterima.
+12. Server melakukan logout pengguna dan menghapus sesi pengguna.
+13. Server mengirim respons ke aplikasi Flutter dengan pesan sukses logout.
+14. Aplikasi Flutter menerima respons dan menampilkan pesan sukses logout pada pengguna.
+
+#### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
+1. Membuat model untuk product pada aplikasi Flutter.
+2. Membuat service untuk mengambil data product dari server menggunakan library http.
+3. Membuat provider untuk menyimpan data product dan mengelola state aplikasi.
+4. Membuat halaman beranda untuk menampilkan daftar product yang diambil dari server.
+5. Membuat halaman detail untuk menampilkan detail product yang dimiliki oleh pengguna.
+6. Membuat halaman login untuk autentikasi pengguna. beserta dengan viewsnya di django.
+7. Membuat halaman register untuk mendaftarkan pengguna baru. beserta dengan viewsnya di django.
+8. Membuat halaman logout untuk keluar dari aplikasi. beserta dengan viewsnya di django.
